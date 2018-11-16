@@ -14,7 +14,7 @@ class SparclexServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        PresetCommand::macro('tailwind', function($command) {
+        PresetCommand::macro('sparclex', function($command) {
             Preset::install();
             $command->info('Preset applied');
         });

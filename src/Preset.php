@@ -37,7 +37,7 @@ class Preset extends LaravelPreset {
                 'bootstrap',
                 'jquery',
                 'lodash',
-            ]);
+            ]));
     }
 
     public static function updateMix()
