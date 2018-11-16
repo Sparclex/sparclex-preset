@@ -16,6 +16,7 @@ class Preset extends LaravelPreset {
         static::updateStyles();
         static::copyTailwindConfig();
         static::createComponentsDirectory();
+        static::copyDefaultView();
     }
 
     public static function cleanJsDirectory()
@@ -31,7 +32,7 @@ class Preset extends LaravelPreset {
     public static function updatePackageArray($packages)
     {
         return array_merge(
-            ['tailwindcss' => '1.*'],
+            ['tailwindcss' => '*'],
             Arr::except($packages, [
                 'popper.js',
                 'bootstrap',
@@ -64,5 +65,10 @@ class Preset extends LaravelPreset {
     public static function createComponentsDirectory()
     {
         mkdir(resource_path('js/components'));
+    }
+
+    public static function copyDefaultView()
+    {
+        copy(__DIR__.'/stubs/layout.blade.php', resource_path('views/layout.blade.php'));
     }
 }
