@@ -1,0 +1,23 @@
+{
+	"name": "sparclex/sparclex-preset",
+	"description": "sparclex laravel preset",
+	"keywords": ["laravel", "laravel-preset", "tailwindcss", "vue", "vuejs"],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Sparclex",
+			"email": "silvan.wehner@gmail.com"
+		}
+	],
+	"minimum-stability": "stable",
+	"autoload": {
+		"psr-4": {
+			"Sparclex\\SparclexPreset\\": "src/"
+		}
+	},
+	"extra": {
+		"laravel": {
+			"providers": ["Sparclex\\SparclexPreset\\SparclexServiceProvider"]
+		}
+	}
+}
