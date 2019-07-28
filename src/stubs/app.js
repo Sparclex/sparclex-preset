@@ -7,7 +7,8 @@ window.Vue = require('vue');
 const files = require.context('./components', true, /\.vue$/i);
 
 files.keys().map(key => {
-    return Vue.component(_.last(key.split('/')).split('.')[0], files(key));
+    let parts = key.split('/');
+    return Vue.component(parts[parts.length - 1].split('.')[0], files(key));
 });
 
 const app = new Vue({

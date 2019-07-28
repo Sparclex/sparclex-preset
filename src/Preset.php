@@ -32,7 +32,8 @@ class Preset extends LaravelPreset {
     public static function updatePackageArray($packages)
     {
         return array_merge(
-            ['tailwindcss' => '*'],
+            ['tailwindcss' => '*',
+            'laravel-mix-tailwind' => ''],
             Arr::except($packages, [
                 'popper.js',
                 'bootstrap',
@@ -59,7 +60,7 @@ class Preset extends LaravelPreset {
 
     public static function copyTailwindConfig()
     {
-        copy(__DIR__.'/stubs/tailwind.js', base_path('tailwind.js'));
+        copy(__DIR__.'/stubs/tailwind.config.js', base_path('tailwind.config.js'));
     }
 
     public static function createComponentsDirectory()
